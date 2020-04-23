@@ -63,7 +63,7 @@ button a{
 </style>
 
 <?php
-if(isset($_COOKIE["branch"])){
+if(isset($_SESSION["valid"]) && $_SESSION["valid"]=="yes"){
 
 if(strlen($_REQUEST["bofficename"])==0 || strlen($_REQUEST["totaltransactions"])==0 || strlen($_REQUEST["totalamount"])==0){
 	echo "All fields are mandatory to submit!";
@@ -71,14 +71,14 @@ if(strlen($_REQUEST["bofficename"])==0 || strlen($_REQUEST["totaltransactions"])
 
 else{
 	echo "Transaction Data Sending Successful!";
-	$conn = mysqli_connect("localhost", "root", "","offices");
-		$sql="insert into logs (name,uname,utype,pass) values ('".$_REQUEST["bofficename"]."','".$_REQUEST["totaltransactions"]."','".$_REQUEST["totalamount"]."')";
+  $conn = mysqli_connect("localhost", "root", "","offices");
+		$sql="insert into btransactions (bofficename,totaltransactions,totalamount) values ('".$_REQUEST["bofficename"]."','".$_REQUEST["totaltransactions"]."','".$_REQUEST["totalamount"]."')";
 		//$sql="select * from user where uname='".$_REQUEST["uname"]."'";
 		//echo $sql;
 		$result = mysqli_query($conn, $sql)or die(mysqli_error($conn));
 
 			if (isset($result)) {
-			echo "New record created successfully";
+			echo "Data Sent successfully";
 			} else {
 			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 			}

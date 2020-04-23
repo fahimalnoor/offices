@@ -68,7 +68,8 @@ $(document).ready(function(){
 </script>
 
 <?php
-if(isset($_COOKIE["branch"])){
+session_start();
+if(isset($_SESSION["valid"]) && $_SESSION["valid"]=="yes"){
 ?>
 <center><h2>Welcome Dear Admin!</h2></center>
 

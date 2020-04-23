@@ -1,7 +1,7 @@
 <?php
 session_start();
-foreach($_COOKIE as $k=>$v){
-	setcookie($k,"",time()-1800);
-}
+$_SESSION["valid"]="";
+unset($_SESSION["valid"]);
+unset($_SESSION["uname"]);
 header("Location:home.php");
 ?>

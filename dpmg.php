@@ -68,7 +68,8 @@ $(document).ready(function(){
 </script>
 
 <?php
-if(isset($_COOKIE["dpmg"])){
+session_start();
+if(isset($_SESSION["valid"]) && $_SESSION["valid"]=="yes"){
 ?>
 <center><h2>Welcome Dear DPMG Admin!</h2></center>
 
@@ -82,12 +83,16 @@ if(isset($_COOKIE["dpmg"])){
 <div id="flip">Click Here To Show Your Available Features!</div></br>
 <div id="panel">
 
-<form action="manuserinfo.php" method="post"><pre>
-<h3>Please enter a user id to check the information</h3>
-<input type="text" name="usersearch" value=""> <input type="submit" name="usersub" value="Search" />
-</pre></form>
+<form action="dptransup.php" method="post"><pre>
+<h3>Please enter your transaction data for today!</h3>
+<input placeholder="DPMG Office Name" type="text" name="dpofficename" value="">
 
-</div>
+<input placeholder="Total Transactions" type="text" name="totaltransactions" value="">
+
+<input placeholder="Total Transactions Amount" type="text" name="totalamount" value="">
+
+<input type="submit" name="transub" value="Submit"/>
+</pre></form>
 
 <div class="footer">
   Website originally developed!

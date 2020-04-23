@@ -27,6 +27,7 @@ button a{
 
 <?php
 $flag=0;
+
 $conn = mysqli_connect("localhost", "root", "","offices");
 		$sql="select * from logs where uname='".$_REQUEST["uname"]."'";
 		$result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
@@ -36,6 +37,10 @@ $conn = mysqli_connect("localhost", "root", "","offices");
 			$temp["pass"]=$row["pass"];
 			$temp["utype"]=$row["utype"];
 		if($_REQUEST["uname"]==$temp["uname"] && sha1($_REQUEST["pass"])==$temp["pass"]){
+			session_start();
+			$_SESSION["valid"]="yes";
+			$_SESSION["uname"]=$temp["uname"];
+			$_SESSION["utype"]=$temp["utype"];
 		$flag=1;
 		break;
 	}
@@ -54,9 +59,7 @@ if($flag==0){
 }
 else if($flag==1){
 	
-	if($temp["utype"]=="admin"){
-	session_start();
-	setcookie("admin",$_REQUEST["uname"], time() + 1800);
+	if($_SESSION["utype"]=="admin"){
 	header("Location:adminhome.php");
 	}
 	else if($temp["utype"]=="branch"){
