@@ -90,7 +90,8 @@ Office Name:
 <input type="text" name="name" ></br>
 Username:
 
-<input type="text" name="uname" ></br>
+<input type="text" name="uname" >
+<input type="hidden" name="userid" value="">
 
 Select Office/User Type:
 

@@ -83,9 +83,15 @@ if(isset($_SESSION["valid"]) && $_SESSION["valid"]=="yes"){
 <div id="flip">Click Here To Show Your Available Features!</div></br>
 <div id="panel">
 
-<form action="manuserinfo.php" method="post"><pre>
-<h3>Please enter a user id to check the information</h3>
-<input type="text" name="usersearch" value=""> <input type="submit" name="usersub" value="Search" />
+<form action="ctransup.php" method="post"><pre>
+<h3>Please enter your transaction data for today!</h3>
+<input placeholder="Circle Office Name" type="text" name="cofficename" value="">
+
+<input placeholder="Total Transactions" type="text" name="totaltransactions" value="">
+
+<input placeholder="Total Transactions Amount" type="text" name="totalamount" value="">
+
+<input type="submit" name="transub" value="Submit"/>
 </pre></form>
 
 </div>

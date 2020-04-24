@@ -28,6 +28,7 @@ Head:
     -Can retrieve daily data from branch and dpgm offices
     -Can request for data correction
 Circle:
+    -Can send daily data to dg and head office
     -Can retrieve daily data from dpgm offices
 Branch:
     -Can send daily data to dg and head office

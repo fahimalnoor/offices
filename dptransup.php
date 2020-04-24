@@ -66,20 +66,20 @@ button a{
 session_start();
 if(isset($_SESSION["valid"]) && $_SESSION["valid"]=="yes"){
 
-if(strlen($_REQUEST["bofficename"])==0 || strlen($_REQUEST["totaltransactions"])==0 || strlen($_REQUEST["totalamount"])==0){
+if(strlen($_REQUEST["dpofficename"])==0 || strlen($_REQUEST["totaltransactions"])==0 || strlen($_REQUEST["totalamount"])==0){
 	echo "All fields are mandatory to submit!";
 }
 
 else{
 	//echo "Transaction Data Sending Successful!";
   $conn = mysqli_connect("localhost", "root", "","offices");
-    $sql1="select * from branches where userid='".$_SESSION["userid"]."'";
+    $sql1="select * from dpmgs where userid='".$_SESSION["userid"]."'";
     $result1 = mysqli_query($conn, $sql1)or die(mysqli_error($conn));
 
     while($row = mysqli_fetch_assoc($result1)) {
-      $_SESSION["bid"] = $row["bid"];
+      $_SESSION["dpid"] = $row["dpid"];
 
-		$sql="insert into btransactions (bid, bofficename,totaltransactions,totalamount) values ('".$_SESSION["bid"]."','".$_REQUEST["bofficename"]."','".$_REQUEST["totaltransactions"]."','".$_REQUEST["totalamount"]."')";
+		$sql="insert into dptransactions (dpid, dpofficename,totaltransactions,totalamount) values ('".$_SESSION["dpid"]."','".$_REQUEST["dpofficename"]."','".$_REQUEST["totaltransactions"]."','".$_REQUEST["totalamount"]."')";
 	
 		$result = mysqli_query($conn, $sql)or die(mysqli_error($conn));
 
@@ -95,7 +95,7 @@ else{
 echo "<br/>";
 ?>
 
-<br/><button class="button"><a href="branch.php">Go Back</a></button><br/>
+<br/><button class="button"><a href="dpmg.php">Go Back</a></button><br/>
 <br/><button class="button"><a href="logout.php">Logout</a></button><br/>
 
 <div class="footer">
