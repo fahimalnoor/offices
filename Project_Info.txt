@@ -20,16 +20,16 @@ Common Features:
 User Wise Features:
 
 DG:
-   -Can retrieve daily data sent by branch offices 
+   -Can retrieve daily data sent by branch and circle offices 
    -Can request for data correction
 DPMG:
     -Can send daily data to circle office and head office
 Head:
-    -Can retrieve daily data from branch and dpgm offices
+    -Can retrieve daily data from branch and dpmg offices
     -Can request for data correction
 Circle:
     -Can send daily data to dg and head office
-    -Can retrieve daily data from dpgm offices
+    -Can retrieve daily data from dpmg offices
 Branch:
     -Can send daily data to dg and head office
 Super Admin:

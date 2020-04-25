@@ -94,6 +94,14 @@ if(isset($_SESSION["valid"]) && $_SESSION["valid"]=="yes"){
 <input type="submit" name="transub" value="Submit"/>
 </pre></form>
 
+<form action="cretrieve.php" method="post"><pre>
+<h3>Please enter a date to show the transaction data!</h3>
+Please Use The YYYY-MM-DD Format To Search!
+<input type="text" name="transsearch" value="">
+<input type="submit" name="datesub" value="Search" />
+</pre></form>
+
+
 </div>
 
 <div class="footer">

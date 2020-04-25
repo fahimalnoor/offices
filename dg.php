@@ -83,9 +83,11 @@ if(isset($_SESSION["valid"]) && $_SESSION["valid"]=="yes"){
 <div id="flip">Click Here To Show Your Available Features!</div></br>
 <div id="panel">
 
-<form action="manuserinfo.php" method="post"><pre>
-<h3>Please enter a user id to check the information</h3>
-<input type="text" name="usersearch" value=""> <input type="submit" name="usersub" value="Search" />
+<form action="dgretrieve.php" method="post"><pre>
+<h3>Please enter a date to show the transaction data!</h3>
+Please Use The YYYY-MM-DD Format To Search!
+<input type="text" name="transsearch" value="">
+<input type="submit" name="datesub" value="Search" />
 </pre></form>
 
 </div>
