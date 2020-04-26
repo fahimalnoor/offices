@@ -16,6 +16,8 @@ Common Features:
     -Cookie used for login and logout
     -Attractive dashboard for all users
     -Attractive drop down UI using JQuery
+    -Push message service among users with proper
+     sender,receiver username and user-type information
 
 User Wise Features:
 

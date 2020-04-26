@@ -15,7 +15,7 @@ li a{
   padding: 14px 16px;
   text-decoration: none;
 }
-li a:hover {
+li a:hover,.dropdown:hover .dropbtn {
   background-color: #ddd;
 }
 li a:hover:not(.active) {
@@ -56,6 +56,51 @@ li a:hover:not(.active) {
   padding: 50px;
   display: none;
 }
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
 </style>
 <script src="slidedownjq.js"></script>
 <script> 
@@ -71,12 +116,21 @@ $(document).ready(function(){
 session_start();
 if(isset($_SESSION["valid"]) && $_SESSION["valid"]=="yes"){
 ?>
-<center><h2>Welcome Dear DG Admin!</h2></center>
+<center><h2>Welcome Dear <?php echo $_SESSION["utype"]; ?> Office Admin!</h2></center>
 
 <hr></br>
 
 <ul>
   <li><a class="active" href="dg.php">Home</a></li>
+  <div class="dropdown">
+    <button class="dropbtn">Messages 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="inbox.php">Inbox</a>
+      <a href="newmsg.php">New Message</a>
+    </div>
+  </div> 
   <li><a href="logout.php">Logout</a></li>
 </ul></br>
 
