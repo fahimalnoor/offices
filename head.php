@@ -128,7 +128,8 @@ if(isset($_SESSION["valid"]) && $_SESSION["valid"]=="yes"){
     </button>
     <div class="dropdown-content">
       <a href="inbox.php">Inbox</a>
-      <a href="newmsg.php">New Message</a>
+      <a href="bmsg.php">Branch Inbox</a>
+      <a href="newmsg.php">New Message</a> 
     </div>
   </div> 
   <li><a href="logout.php">Logout</a></li>

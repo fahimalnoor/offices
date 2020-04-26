@@ -29,6 +29,7 @@ DPMG:
 Head:
     -Can retrieve daily data from branch and dpgm offices
     -Can request for data correction
+    -Can check the inbox of branch messages with details
 Circle:
     -Can retrieve daily data from dpgm offices
 Branch:
